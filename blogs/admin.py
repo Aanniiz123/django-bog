@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Category , Blog, About
+from .models import Category , Blog, About, SocialLink
 
 # Register your models here.
 
@@ -23,3 +23,4 @@ class AboutAdmin(admin.ModelAdmin):
 admin.site.register(Category)
 admin.site.register(Blog, BlogAdmin)
 admin.site.register(About, AboutAdmin)
+admin.site.register(SocialLink)

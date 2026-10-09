@@ -15,6 +15,7 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 
+from re import search
 from django.contrib import admin
 from django.urls import include, path
 from . import views
@@ -26,6 +27,8 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path("", views.home, name="home"),
     path('category/', include('blogs.urls')),
-    path('<slug:slug>/',  BlogsView.blogs, name = 'blogs')
+    path('<slug:slug>/',  BlogsView.blogs, name = 'blogs'),
+    ## Search end point
+    path('blogs/search/', BlogsView.search, name ='search')
     
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
