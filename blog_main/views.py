@@ -21,3 +21,7 @@ def home(request):
         'about' : about
     }
     return render(request, "home.html", context)
+
+
+def register(request):
+    return render(request, 'register.html')
